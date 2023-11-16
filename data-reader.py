@@ -1,5 +1,5 @@
 import glob, os, sys
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 # Import files
 data_path = os.path.join(os.path.join(os.path.dirname(__file__), "data"), "*.html")
@@ -11,6 +11,7 @@ for file in file_contents:
         with open(file, 'r') as f:
             # Open file with Read 
             html_text = f.read()
-            print(html_text)
+            soup = BeautifulSoup(html_text, 'lxml')
+            print(soup.prettify())
     except Exception  as  e:
         print(e)
