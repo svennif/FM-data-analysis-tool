@@ -1,20 +1,16 @@
-import pandas as pd
-import glob
-import os
+import glob, os, sys
+# from bs4 import BeautifulSoup
 
 # Import files
-imported_files = glob.glob(os.path.join('D:\web\FM-Data-Analysis-Tool\data', "*"))
+data_path = os.path.join(os.path.join(os.path.dirname(__file__), "data"), "*.html")
 
-if len(imported_files) > 0:
-    newest_file = max(imported_files, key=os.path.getctime)
-    print(newest_file)
+file_contents =  glob.glob(data_path)
 
-    # Read the file
-    raw_data_list = pd.read_html(newest_file, header=0, encoding="utf-8", keep_default_na=False)
-
-    # Create a dataframe
-    raw_data = raw_data_list[0]
-
-    print(raw_data['Name'])
-else:
-    print("No files to process.")
+for file in file_contents:
+    try:
+        with open(file, 'r') as f:
+            # Open file with Read 
+            html_text = f.read()
+            print(html_text)
+    except Exception  as  e:
+        print(e)
