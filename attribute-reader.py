@@ -2,7 +2,7 @@ import glob, os
 from bs4 import BeautifulSoup
 
 # Import files
-data_path = os.path.join(os.path.join(os.path.dirname(__file__), "data"), "*-attributes.html")
+data_path = os.path.join(os.path.join(os.path.dirname(__file__), "data"), "*GKs.html")
 
 file_contents = glob.glob(data_path)
 
