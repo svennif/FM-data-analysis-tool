@@ -46,3 +46,5 @@ for table in soup.find_all('table'):
         row_data = [td.text for td in row.find_all('td')]
         gk_secondary_data = { header: value for header, value in zip(headers, row_data) if header in gk_secondary_headers }
         gk_secondary_list.append(gk_secondary_data)
+        
+        print(gk_essential_list)
