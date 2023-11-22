@@ -1,16 +1,32 @@
-# Description: I want to take an HTML file that is exported from FM and turn it into a dataframe. I then want to add some columns to the dataframe and calculate some scores. I then want to export the dataframe as styled html
+import glob, os, sys
+from bs4 import BeautifulSoup
+import json
 
-import pandas as pd
-import glob, os
-
-# Import the HTML file as a dataframe
+# Import files
 data_path = os.path.join(os.path.join(os.path.dirname(__file__), "data"), "*.html")
 
-# Get the list of files sorted by modification time
-files = sorted(glob.glob(data_path), key=os.path.getmtime, reverse=True)
+file_contents = glob.glob(data_path)
 
-# Select the latest file
-latest_file = files[0]
+dict_list = []
 
-# Read the latest file as a dataframe
-df = pd.read_html(latest_file)[0]
+for file in file_contents:
+    try:
+        with open(file, "r") as f:
+            # Open file with Read
+            html_text = f.read()
+            soup = BeautifulSoup(html_text, "html.parser")
+            rows = soup.find_all("tr")
+            headers = [s.text for s in rows[0].find_all("th")]
+            print(headers)
+            rows = rows[1:]
+            for row in rows:
+                row = [s.text for s in row.find_all("td")]
+                output = {}
+                for idx, h in enumerate(headers):
+                    output[h] = row[idx]
+                dict_list.append(output)
+            print(json.dumps(dict_list))
+            with open(f"{file}.json", "w") as f:
+                f.write(json.dumps(dict_list))
+    except Exception as e:
+        print(e)
