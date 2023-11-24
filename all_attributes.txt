@@ -7,10 +7,8 @@ Bal
 Bra
 Cmd 
 Cmp
-Cmp
 Cnt
 Cor
-Cmp
 Cro
 Dec
 Det 

@@ -12,7 +12,16 @@ file_contents = glob.glob(data_path)
 dict_list = []
 
 # Define the specific headers you want to select
-selected_headers = ["header1", "header2", "header3"]
+# Key headers will be valued 2 times higher 
+
+mezzala_headers = ["Lon", "Tck", "Tec", "Ant", "Cmp", "Tea", "Vis", "Wor", "Acc", "Sta"]
+mezzala_headers_key = ["Fir", "Pas", "Dec", "OtB"]
+
+dm_headers = ['Mar', 'Pas', 'Agg', 'Cmp', 'Dec', 'Wor', 'Sta', 'Str']
+dm_headers_key = ['Tck', 'Ant','Cnt', 'Pos', 'Tea']
+
+bbm_headers = ['Dri', 'Fin', 'Fir', 'Lon', 'Tec', 'Agg', 'Ant', 'Cmp', 'Dec', 'Pos', 'Acc', 'Bal', 'Pac', 'Str']
+bbm_headers_key = ['Pas', 'Tck', 'OtB', 'Tea', 'Wor', 'Sta']
 
 # Loop through all files
 for file in file_contents:
@@ -35,6 +44,9 @@ for file in file_contents:
                 row = [s.text for s in row.find_all("td")]
                 output = {}
                 # Loop through all headers and add to dictionary
+
+                
+
                 # Using enumerate to get the index of the header is more reliable than using the index of the row
                 for idx, h in enumerate(headers):
                     # Check if the header is in the selected headers list

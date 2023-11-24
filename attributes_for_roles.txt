@@ -102,9 +102,98 @@
 
     # Midfield
         # Destroyer
+            # DM
+                # Marking
+                # Passing
+                # Tackling (K)
+                # Aggression
+                # Anticipation (K)
+                # Composure
+                # Concentration (K)
+                # Decisions
+                # Positioning (K)
+                # Teamwork (K)
+                # Work Rate
+                # Stamina
+                # Strength
+            # BBM 
+                # Dribbling
+                # Finishing
+                # First Touch
+                # Long Shots
+                # Passing (K)
+                # Tackling (K)
+                # Technique
+                # Aggression
+                # Anticipation
+                # Composure
+                # Decisions
+                # Off the Ball (K)
+                # Positioning
+                # Teamwork (K)
+                # Work Rate (K)
+                # Acceleration
+                # Balance
+                # Pace
+                # Stamina (K)
+                # Strength
+            # BWM
+                # Marking
+                # Tackling (K)
+                # Aggression (K)
+                # Anticipation (K)
+                # Bravery
+                # Concentration
+                # Positioning
+                # Teamwork (K)
+                # Work Rate (K) 
+                # Agility
+                # Pace
+                # Stamina (K)
+                # Strength (K)
         # Playmaker
+            # Mezzala
+                # Dribbling
+                # First Touch
+                # Long Shots
+                # Passing (K)
+                # Tackling
+                # Technique (K)
+                # Anticipation
+                # Composure
+                # Decisions (K)
+                # Off the Ball (K)
+                # Vision
+                # Work Rate (K)
+                # Acceleration
+                # Balance
+                # Stamina
             # Deep Lying
+                # First Touch (K)
+                # Passing (K)
+                # Technique (K)
+                # Anticipation
+                # Composure (K)
+                # Decisions (K)
+                # Off the Ball
+                # Positioning
+                # Teamwork (K)
+                # Vision (K)
+                # Balance
             # Advanced
+                # Dribbling
+                # First Touch (K)
+                # Passing (K)
+                # Technique (K)
+                # Anticipation
+                # Composure (K)
+                # Decisions (K)
+                # Flair
+                # Off the Ball (K)
+                # Positioning
+                # Teamwork (K)
+                # Vision (K)
+                # Agility
 
     # Attacking
         # Winger 
