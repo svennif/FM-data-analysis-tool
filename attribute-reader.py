@@ -44,24 +44,46 @@ for file in file_contents:
                 row = [s.text for s in row.find_all("td")]
                 output = {}
                 # Loop through all headers and add to dictionary
-
                 
-
-                # Using enumerate to get the index of the header is more reliable than using the index of the row
-                for idx, h in enumerate(headers):
-                    # Check if the header is in the selected headers list
-                    if h in selected_headers:
-                        # Add the header as the key and the row data as the value
-                        output[h] = row[idx]
-                # Add the dictionary to the list
-                dict_list.append(output)
-                # Print the dictionary
+            # Using enumerate to get the index of the header is more reliable than using the index of the row
+            #     for idx, h in enumerate(headers):
+            #         # Check if the header is in the selected headers list
+            #         if h in selected_headers:
+            #             # Add the header as the key and the row data as the value
+            #             output[h] = row[idx]
+            #     # Add the dictionary to the list
+            #     dict_list.append(output)
+            #     # Print the dictionary 
             # print(json.dumps(dict_list))
 
             # # Write the dictionary to a json file
             # with open(f"{file}.json", "w") as f:
             #     # Write the dictionary to the file
             #     f.write(json.dumps(dict_list))
+
+            # I want to loop through the data of mezzala_headers_key, and multiply the value by 2 and sum everything together
+            # Then I want to take the values from mezzala_headers and sum them together
+            # Then I want to add the two sums together and divide by 46
+            
+            # Loop through all rows and create a dictionary
+            for row in rows:
+                # Finds all table data and strips the text
+                row = [s.text for s in row.find_all("td")]
+                output = {}
+                # Loop through all headers and add to dictionary
+                for idx, h in enumerate(headers):
+                    # Check if the header is in the selected headers list
+                    if h in mezzala_headers:
+                        # Add the header as the key and the row data as the value
+                        output[h] = row[idx]
+                # Add the dictionary to the list
+                dict_list.append(output)
+                # Print the dictionary
+                # print(json.dumps(dict_list))
+                # Write the dictionary to a json file
+                with open(f"{file}.json", "w") as f:
+                    # Write the dictionary to the file
+                    f.write(json.dumps(dict_list))
 
     except Exception as e:
         print(e)
